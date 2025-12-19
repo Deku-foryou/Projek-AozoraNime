@@ -1,0 +1,72 @@
+ body {
+        background-color: #121212;
+        color: white;
+      }
+
+      #anime-list .col,
+      #anime-weekly .col {
+        display: flex; /* Kunci agar h-100 di kartu bekerja */
+      }
+      /* Supaya kartu punya tinggi yang sama dalam satu baris */
+      .card {
+        background-color: #1e1e1e;
+        color: white;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-title {
+        display: -webkit-box;
+        
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 2.6rem;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Paksa tombol ke bawah */
+      }
+
+      .anime-img {
+        width: 100%;
+        /* Ini kuncinya! Rasio poster anime biasanya 3:4 */
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+      }
+
+      /* Khusus layar HP (ukuran kecil) */
+      @media (max-width: 576px) {
+        .anime-img {
+          aspect-ratio: 2 / 3; /* Sedikit lebih pendek di HP biar gak makan tempat */
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+      /* --- CSS KHUSUS LIGHT MODE --- */
+      body.light-mode {
+        background-image: none; /* Hilangkan batik gelap (atau ganti batik terang) */
+        background-color: #f8f9fa; /* Warna putih gading */
+        color: #212529; /* Warna teks jadi hitam */
+      }
+
+      /* Ubah warna Kartu saat Light Mode */
+      body.light-mode .card {
+        background-color: #ffffff; /* Kartu jadi putih */
+        color: #212529; /* Teks kartu hitam */
+        border: 1px solid #ddd; /* Border abu muda */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Bayangan halus */
+      }
+
+      /* Opsional: Ubah warna judul saat Light Mode */
+      body.light-mode h2 {
+        color: #0d6efd; /* Judul jadi biru bootstrap */
+      }
+
+      /* Badge Episode biar kontras */
+      body.light-mode .badge {
+        background-color: #0d6efd !important; /* Badge jadi biru */
+      }
