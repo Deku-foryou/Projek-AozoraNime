@@ -224,7 +224,7 @@ themeToggle.addEventListener("click", () => {
 // Fungsi Mengaktifkan Mode Terang
 function enableLightMode() {
   body.classList.add("light-mode");
-  themeToggle.innerHTML = "🌙";
+  themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
   themeToggle.classList.replace("btn-outline-light", "btn-outline-dark");
 
   navbar.classList.remove("navbar-dark", "bg-dark");
@@ -236,7 +236,7 @@ function enableLightMode() {
 // Fungsi Mengaktifkan Mode Gelap (Balik ke Awal)
 function disableLightMode() {
   body.classList.remove("light-mode");
-  themeToggle.innerHTML = "☀️";
+ themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
   themeToggle.classList.replace("btn-outline-dark", "btn-outline-light");
 
   navbar.classList.add("navbar-dark", "bg-dark");
